@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import Main from './components/Main/Main'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+interface State{
+  token: string | null;
+  userId: number;
+  role: 'user' | 'admin';
+}
+
+class App extends Component<{}, State> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      token: "",
+      userId: 0,
+      role: 'user',
+    }
+  }
+
+  componentDidMount = () => {
+    if(localStorage.getItem('token')) {
+      this.setState({
+        token: localStorage.getItem('token'),
+      });
+    }
+  }
+
+  updateToken = (newToken: string, userId: number, role: 'user' | 'admin') => {
+    localStorage.setItem("token", newToken);
+    localStorage.setItem('userId', String(userId));
+    localStorage.setItem('role', role);
+    this.setState({
+      token: newToken,
+      userId: userId,
+      role: role,
+    })
+  };
+  
+  clearToken = () => {
+    localStorage.clear();
+    this.setState({
+      token: "",
+    });
+  }
+  render() {
+    return(
+      <div className='App'>
+        <Main updateToken={this.updateToken} token={this.state.token} clearToken={this.clearToken} />
+      </div>
+    )
+  }
 }
 
 export default App;
