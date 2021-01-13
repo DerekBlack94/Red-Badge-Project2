@@ -1,48 +1,67 @@
-import React, {Component} from 'react';
-import { Button, TextField} from '@material-ui/core';
+import React, { Component, MouseEvent } from 'react';
+import { TextField, Button } from '@material-ui/core';
+import APIURL from '../../helpers/environment'
 
-
-interface Props {
-    updateToken: (newToken: string, userId: number, role: 'user' | 'admin') => void;
-}
-interface State {
+type LoginState = {
     email: string,
     password: string
 }
 
-class Login extends Component<Props, State> {
-    constructor(props: any){
+interface Props {
+    updateToken(newToken: string, userId: number, role: 'user' | 'admin'): void,
+}
+
+export default class LoginIndex extends Component<Props, LoginState>{
+    constructor(props: Props){
         super(props)
-        this.state=({
+        this.state ={
             email: '',
             password: ''
-        });
+        }
     }
-    handleSubmit = (event: any) => {
-        event.preventDefault();
-        fetch('http//localhost:3000/user/login', {
-            method: "POST",
-            body: JSON.stringify({email: this.state.email, password: this.state.password}),
-            headers: new Headers({
-                'Content-Type' : 'application/json'
-            })
-        })
-        .then((result) => result.json())
-        .then((data) => {
-            this.props.updateToken(data.sessionToken, data.userId, data.role);
-        })
-    }
-    render() {
-        return(
-            <div>
-                <form onSubmit={(e) =>this.handleSubmit(e)}>
-                    <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e)=>this.setState({email: e.target.value})} />
-                    <TextField id="outlined-basic" type="password" label="Password" variant="outlined" onChange={(e)=>this.setState({password: e.target.value})} />
-                    <Button type='submit' variant='contained'>LOG IN</Button>
-                </form>
 
+    setUserName(e:string){
+        this.setState({
+            email: (e)
+        })
+    }
+
+    setPassword(e: string){
+        this.setState({
+            password: (e)
+        })
+    }
+
+    loginUser(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement> ){
+        e.preventDefault();
+        fetch(`${APIURL}/user/login`, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then((response)=> response.json())
+            .then((data)=> {
+               
+                localStorage.setItem("token", data.token);
+                localStorage.setItem('userId', String(data.user.id));
+                localStorage.setItem('role', data.user.role);
+                this.props.updateToken(data.token, data.user.id, data.user.role)
+            })
+    }
+
+    render() {
+        return (
+            <div>
+                {/* <form onSubmit={(e)=>this.loginUser(e)} > */}
+                    <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e)=>this.setUserName(e.target.value)} />
+                    <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(e)=>this.setPassword(e.target.value)} />
+                    <Button onClick={(e)=>this.loginUser(e)} type='submit' variant='contained'>LOG IN</Button>
+                {/* </form> */}
             </div>
         )
     }
 }
-export default Login;

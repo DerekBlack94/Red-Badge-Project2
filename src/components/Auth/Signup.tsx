@@ -1,57 +1,99 @@
-import React, {Component} from 'react';
-import {Button, TextField} from '@material-ui/core';
+import React, { Component, MouseEvent } from 'react';
+import { TextField, Button} from '@material-ui/core';
+import APIURL from '../../helpers/environment'
+
+type SignUpState = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    role: "user" | "admin"
+}
 
 interface Props {
-    updateToken: (newToken: string, userId: number, role: 'user' | 'admin') => void
+    updateToken(newToken: string, userId: number, role: 'user' | 'admin'): void,
+    roleAdmin:Function,
+    roleUser: Function
 }
-interface State {
-    firstName : string;
-    lastName : string;
-    email: string;
-    password: string;
-}
-class SignUp extends Component<Props, State> {
-    constructor(props: any) {
-        super(props);
+
+export default class Signup extends Component<Props, SignUpState>{
+    constructor(props: Props) {
+        super(props)
         this.state = {
             firstName: '',
             lastName: '',
             email: '',
             password: '',
-        };
+            role: "user"
+        }
+        
     }
-    handleSubmit = (event: any) => {
-        event.preventDefault();
-        fetch('http://localhost:3000/user/register', {
+
+    setFirstName(e: string) {
+        this.setState({
+            firstName: (e)
+        })
+        
+    }
+
+    setLastName(e: string) {
+        this.setState({
+            lastName: (e)
+        })
+       
+    }
+
+    
+
+    setEmail(e: string) {
+        this.setState({
+            email: (e)
+        })
+        
+    }
+
+    setPassword(e: string) {
+        this.setState({
+            password: (e)
+        })
+        // console.log('password', this.state.password)
+    }
+
+    signUpUser(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) {
+        e.preventDefault();
+        fetch(`${APIURL}/user/register`, {
             method: 'POST',
             body: JSON.stringify({
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 email: this.state.email,
-                password: this.state.password,
+                password: this.state.password
             }),
             headers: new Headers({
-                'Content-Type': 'application/json',
-            }),
-        })
-        .then((result) => result.json())
-        .then((data) => {this.props.updateToken(data.sessionToken, data.userId, data.role)})
+                'Content-Type': 'application/json'
+            })
+        }).then((response) => response.json())
+            .then((data) => {
+                this.props.updateToken(data.token, data.userId, data.role)
+            //    console.log(data.token)
+            })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <form onSubmit={(e)=>this.handleSubmit(e)}>
-                    <TextField id="outlined-basic" label='First Name' onChange={(e) => this.setState({firstName: e.target.value})} />
-                    <TextField id="outlined-basic" label='Last Name' onChange={(e) => this.setState({lastName: e.target.value})} />
-                    <TextField id="outlined-basic" label='Email Address' onChange={(e) => this.setState({email: e.target.value})} />
-                    <TextField id="outlined-basic" type="password" label='Password' onChange={(e) => this.setState({password: e.target.value})} />
-                    <Button type='submit' variant="contained">Register</Button>
-
-                </form>
-                
+                {/* <form onSubmit={(e)=>this.signUpUser(e)} > */}
+                    <TextField id="outlined-basic" label="First Name" variant="outlined" onChange={(e)=>this.setFirstName(e.target.value)} />
+                    <TextField id="outlined-basic" label="Last Name" variant="outlined"
+                    onChange={(e)=>this.setLastName(e.target.value)} />
+                    <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e)=>this.setEmail(e.target.value)} />
+                    <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(e)=>this.setPassword(e.target.value)} />
+                    <Button onClick={(e)=>this.signUpUser(e)} type='submit' variant="contained">Register</Button>
+                    <Button  onClick={(e) => this.props.roleAdmin(e)} >Admin</Button>
+                    <Button onClick={(e) => this.props.roleUser(e)} >User</Button>
+                    
+                {/* </form> */}
             </div>
         )
     }
 }
-export default SignUp;

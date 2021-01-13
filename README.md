@@ -44,3 +44,34 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+<---------------------->
+
+# Scheduling App
+
+This is a Scheduling App I made for a local Bike Shop !
+you can upload info about your bike along with make appointments
+
+## Installation
+
+Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-packages-locally) to install npm.
+
+```npm
+npm install
+```
+
+## Usage
+
+``` 
+npm install
+
+npm update
+Did That Work?
+
+```
+
+## Contributing
+Derek Made This
+
+## License
+[Important Link](https://youtu.be/3ggIHfwkIWM)
