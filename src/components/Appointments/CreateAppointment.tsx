@@ -30,7 +30,7 @@ import Paper from '@material-ui/core/Paper';
 interface State {
  savedDate: string,
  userInput: string,
- selectedDate: any
+ 
  classes: string
  
 };
@@ -46,7 +46,7 @@ class CreateAppointment extends Component<Props, State> {
     this.state = {
       savedDate: "",
       userInput: "",
-      selectedDate: new Date(),
+     
       classes: ""
       
     };
@@ -64,16 +64,16 @@ class CreateAppointment extends Component<Props, State> {
     });
   }
 
-  handleDateChange = (date: any )  => {
-    this.setState({ selectedDate: date } );
-  };
+  // handleDateChange = (date:  )  => {
+  //   this.setState({ selectedDate: date } );
+  // };
 
-  setSelectedDate(e: any) {
-    this.setState({
-      selectedDate: (e)
-    });
-    console.log(Date)
-  }
+  // setSelectedDate(e: ) {
+  //   this.setState({
+  //     selectedDate: (e)
+  //   });
+  //   console.log(Date)
+  // }
 
   
 
@@ -126,7 +126,7 @@ class CreateAppointment extends Component<Props, State> {
             'aria-label': 'change date',
           }}
         /> */}
-        <KeyboardDatePicker
+        {/* <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
           label="Date picker dialog"
@@ -146,7 +146,7 @@ class CreateAppointment extends Component<Props, State> {
           KeyboardButtonProps={{
             'aria-label': 'change time',
           }}
-        />
+        /> */}
       </Grid>
     </MuiPickersUtilsProvider>
        
