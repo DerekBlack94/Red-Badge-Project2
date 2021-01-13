@@ -21,11 +21,19 @@ const LoginDisplay =(props: Props)=>{
             height: '100vh'
 
     }
+    const title = {
+        marginTop: "2em",
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            color: 'green'
+
+    }
 
     return(
         <Container style={divStyle}>
             <div>
-                <h1>LOG IN</h1>
+                <h1 style={title} >LOG IN</h1>
                 <Login updateToken={props.updateToken} />
             </div>
         </Container>

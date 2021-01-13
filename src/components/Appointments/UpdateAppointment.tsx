@@ -76,17 +76,20 @@ updateAppointment() {
   }
 
   render() {
+    const divStyle = {
+      backgroundColor: "white"
+    }
     return (
       <div>
         
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Appointment Time"
             variant="outlined"
             value={this.state.savedDate}
             onChange={(e) => this.setDate(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="What Problems are you Haveing?"
             variant="outlined"

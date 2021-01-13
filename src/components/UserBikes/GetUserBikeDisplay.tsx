@@ -14,12 +14,13 @@ interface Props {
 
 const GetUserBikeDisplay = (props: Props) => {
     const divStyle = {
-        marginTop: '5em',
+        marginTop: '3em',
         backgroundColor: 'white',
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        height: '100%'
+        height: '100%',
+        paddingTop: '3em'
     }
     
     return (

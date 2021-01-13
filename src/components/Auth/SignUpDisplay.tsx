@@ -3,25 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
 import Signup from './Signup';
 
-const useStyles = makeStyles({
-   
-        mainContainer: {
-            marginTop: '3em',
-            backgroundColor: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            height: '100vh'
-        },
-        signupText:{
-            color:"blue",
-            justifyContent: 'center',
-            alignContent: 'center',
-            display: 'flex',
-            paddingTop:"2em"
-        }
-  
-    });
+
 
 interface Props {
     updateToken(newToken: string, userId: number, role: 'user' | 'admin'): void,
@@ -36,13 +18,21 @@ const SignUpDisplay = (props: Props) => {
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        height: '100vh'
+        height: '80vh'
+    }
+    const title = {
+        marginTop: "2em",
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            color: 'green'
+
     }
 
     return (
         <Container style={divStyle}>
             <div>
-                <h1 style={divStyle}>SIGN UP</h1>
+                <h1 style={title} >SIGN UP</h1>
                 <Signup roleAdmin={props.roleAdmin} roleUser={props.roleUser} updateToken={props.updateToken} />
             </div>
         </Container>

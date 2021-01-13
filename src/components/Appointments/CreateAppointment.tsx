@@ -157,7 +157,7 @@ class CreateAppointment extends Component<Props, State> {
           />
           <TextField
             id="outlined-basic"
-            label="Whats this all about? Life i mean"
+            label="Whats this appointment about"
             variant="outlined"
             onChange={(e) => this.setUserInput(e.target.value)}
           />

@@ -82,7 +82,7 @@ export default class Signup extends Component<Props, SignUpState>{
     render() {
         return (
             <div>
-                {/* <form onSubmit={(e)=>this.signUpUser(e)} > */}
+               
                     <TextField id="outlined-basic" label="First Name" variant="outlined" onChange={(e)=>this.setFirstName(e.target.value)} />
                     <TextField id="outlined-basic" label="Last Name" variant="outlined"
                     onChange={(e)=>this.setLastName(e.target.value)} />
@@ -92,7 +92,7 @@ export default class Signup extends Component<Props, SignUpState>{
                     <Button  onClick={(e) => this.props.roleAdmin(e)} >Admin</Button>
                     <Button onClick={(e) => this.props.roleUser(e)} >User</Button>
                     
-                {/* </form> */}
+                
             </div>
         )
     }

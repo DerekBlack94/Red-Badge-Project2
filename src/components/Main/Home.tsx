@@ -1,6 +1,7 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Container, Button } from '@material-ui/core'
 import image from '../assets/Logo.png'
+import imageTwo from '../assets/tobyDog.jpg'
 
 
 
@@ -23,6 +24,9 @@ const Home = () => {
                 <h1>Family Bike Chain</h1>
                 
                 <Button>Check Us Out</Button>
+                <div></div>
+
+                <img src={imageTwo}  width="400vw" height="500vh" />
             </div>
         </Container>
     )

@@ -7,6 +7,10 @@ import { DataUsageTwoTone } from "@material-ui/icons";
 import DeleteAppointment from './DeleteAppointment'
 import UpdateAppointment from './UpdateAppointment'
 import APIURL from '../../helpers/environment'
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Paper from '@material-ui/core/Paper';
 
 interface State  {
   // userBikeId: number;
@@ -72,6 +76,12 @@ class GetAppointment extends Component<Props, State> {
   }
 
   render() {
+    
+    const paperStyle = {
+      backgroundColor: "green",
+      width: "17vw"
+
+    }
     return (
       <div>
           <li>
@@ -82,9 +92,10 @@ class GetAppointment extends Component<Props, State> {
             {this.state.userAppointments.map((appointment: appointmentInterface , index: number) => {
                 return(
                     <div key={index} >
+                      <Paper style={paperStyle}>
                         <h1>{appointment.savedDate}</h1>
                         <h1>{appointment.userInput}</h1>
-                        <h1>{appointment.id}</h1>
+                        {/* <h1>{appointment.id}</h1> */}
                         {/* {localStorage.getItem('')} */}
                         {/* {appointment.userId.toString() === localStorage.getItem('userId')? <DeleteAppointment appointmentId={appointment.id} token={this.props.token} /> : <div/> } */}
                         {/* <DeleteAppointment appointmentId={appointment.id} token={this.props.token} />
@@ -92,7 +103,7 @@ class GetAppointment extends Component<Props, State> {
 
                         {appointment.userId.toString() === localStorage.getItem('userId')? <DeleteAppointment appointmentId={appointment.id} token={this.props.token} /> : <div/> }
                         {appointment.userId.toString() === localStorage.getItem('userId')? <UpdateAppointment appointmentId={appointment.id} token={this.props.token} /> : <div/> }
-                       
+                        </Paper>
                     </div>
                 )
             })} 

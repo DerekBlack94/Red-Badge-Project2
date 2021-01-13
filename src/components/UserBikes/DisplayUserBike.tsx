@@ -1,5 +1,4 @@
 import React from 'react';
-import {  makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
 import CreateUserBike from './CreateUserBike';
 import image from '../assets/Logo.png'
@@ -19,7 +18,7 @@ const DisplayUserBike = (props: Props) => {
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
-    height: '50vh',
+    height: '95vh',
     }
     return (
         <Container style={divStyle}  >

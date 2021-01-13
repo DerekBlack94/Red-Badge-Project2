@@ -7,6 +7,7 @@ import GetUserBikeDisplay from "./GetUserBikeDisplay";
 import DeleteUserBike from './DeleteUserBike'
 import UpdateUserBike from './UpdateUserBike'
 import APIURL from '../../helpers/environment'
+import Paper from '@material-ui/core/Paper';
 
 
 
@@ -74,6 +75,11 @@ class GetUserBike extends Component<Props, State> {
  
 
   render() {
+    const paperStyle = {
+      backgroundColor: "green",
+      width: "17vw"
+
+    }
     
     return (
       <div>
@@ -86,6 +92,7 @@ class GetUserBike extends Component<Props, State> {
                 return(
                   
                     <div key={index} >
+                      <Paper style={paperStyle}>
                       <h2>Your {bike.make} {bike.model}</h2>
                         <h3>Make:{bike.make}</h3>
                         <h3>Model:{bike.model}</h3>
@@ -94,14 +101,14 @@ class GetUserBike extends Component<Props, State> {
                         <h3>Size:{bike.size}</h3>
                         <h3>Tire Size:{bike.tireSize}</h3>
                         <h3>Comments:{bike.userInput}</h3>
-                        <h3>role:{bike.user.role}</h3>
+                        {/* <h3>role:{bike.user.role}</h3> */}
                         {/* {this.props.token === "" ? null : <DeleteUserBike userBikeId={bike.id} token={this.props.token}/> } */}
                         {/* <DeleteUserBike userBikeId={bike.id} token={this.props.token}/> */}
-                        {bike.userId.toString() === localStorage.getItem('userId') || bike.user.role.toString() === localStorage.getItem("admin") ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
+                        {bike.userId.toString() === localStorage.getItem('userId') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
                         {bike.userId.toString() === localStorage.getItem('userId') ? <UpdateUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
-                        {bike.user.role.toString() === localStorage.getItem('admin') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
+                        {/* {bike.user.role.toString() === localStorage.getItem('admin') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> } */}
                         {/* <UpdateUserBike userBikeId={bike.id} token={this.props.token}/> */}
-                       
+                        </Paper>
                     </div>
                 )
             })} 

@@ -47,7 +47,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 <---------------------->
 
-# Scheduling App
+# Scheduling App Client
 
 This is a Scheduling App I made for a local Bike Shop !
 you can upload info about your bike along with make appointments
@@ -56,22 +56,35 @@ you can upload info about your bike along with make appointments
 
 Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-packages-locally) to install npm.
 
-```npm
-npm install
-```
+## Getting Started
+
+Step 1: make clone of this project and place it into your own folder
+Step 2: npm install in your terminal window 
+Step 3: Enjoy
+
+# Password Protection
+This application uses Password Encryption to ensure your information is not 
+being put at risk.
+
+# TypeScript and React
+This project uses React and Typescript  
+
+# 10 Endpoint's USER/APPOINTMENTS/BIKES
+This Project uses full CRUD on the Appointments and Bike
+tabels.
 
 ## Usage
 
 ``` 
 npm install
 
-npm update
-Did That Work?
+
+
 
 ```
 
 ## Contributing
-Derek Made This
+Derek Made This WHOLE thing and is proud of it 
 
 ## License
-[Important Link](https://youtu.be/3ggIHfwkIWM)
+[Important Project Information Link Must See Here](https://www.youtube.com/watch?v=3zucl7HSA1M)

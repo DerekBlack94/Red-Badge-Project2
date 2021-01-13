@@ -20,6 +20,7 @@ const NavbBar = (props: Props) => {
     const divStyle = {
             display: 'flex',
             justifyContent: 'flex-end',
+            backgroundColor: "green"
 
     }
 

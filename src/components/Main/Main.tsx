@@ -44,9 +44,7 @@ interface Props {
 const Main = (props: Props) => {
     const classes = useStyles();
 
-    // const bottomNavHandle = () => {
-    //     return props.token === '' ? null : <Drawer />
-    // }
+  
 
     
 
@@ -57,6 +55,7 @@ const Main = (props: Props) => {
                 <Router>
                     <div className={classes.mainDiv}>
                      <NavbBar updateToken={props.updateToken} clearToken={props.clearToken} />
+                     
                     <Switch>
                         <Route exact path='/home' render={()=>(<Home />)} />
                         <Route exact path='/signup' render={()=>(<SignUpDisplay roleAdmin={props.roleAdmin} roleUser={props.roleUser} updateToken={props.updateToken} />)} />
