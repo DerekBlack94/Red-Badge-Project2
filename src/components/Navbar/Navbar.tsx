@@ -10,20 +10,6 @@ import Signup from '../Auth/SignUpDisplay'
 import Login from '../Auth/LoginDisplay'
 import { isClassExpression } from 'typescript';
 
-const useStyles = makeStyles({
-    
-        Buttons: {
-            display: 'flex',
-            justifyContent: 'flex-end',
-            // fontSize: "",
-            // color: 'green'
-
-        },
-        navColor:{
-            backgroundColor: "green"
-        }
-    
-    });
 
 interface Props {
     clearToken:() => void
@@ -31,10 +17,14 @@ interface Props {
 }
 
 const NavbBar = (props: Props) => {
-    const classes = useStyles();
+    const divStyle = {
+            display: 'flex',
+            justifyContent: 'flex-end',
+
+    }
 
     return (
-        <AppBar className={classes.navColor} position='fixed'>
+        <AppBar style={divStyle} position='fixed'>
             <Toolbar>
                 <Grid container spacing={5}>
                     <Grid item >
@@ -43,7 +33,7 @@ const NavbBar = (props: Props) => {
                         {/* {this.props.token === "" ? <Drawer /> : null } */}
                     </Grid>
                     <Grid item xl={12}></Grid>
-                    <Grid item xs className={classes.Buttons}>
+                    <Grid item xs style={divStyle}>
                         {/* <Signup updateToken={props.updateToken}/> */}
                         {/* <Login updateToken={props.updateToken} /> */}
                         {/* <Drawer /> */}

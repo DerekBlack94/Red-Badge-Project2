@@ -3,26 +3,21 @@ import { Container, Button } from '@material-ui/core'
 import image from '../assets/Logo.png'
 
 
-const useStyles = makeStyles({
-    
-        container: {
-            marginTop: '2em',
-            display: 'flex',
+
+
+const Home = () => {
+    const divStyle ={
+                marginTop: '2em',
+                display: 'flex',
                 justifyContent: 'center',
                 alignContent: 'center',
                 height: "100vh",
                 backgroundColor: "white",
                 paddingTop: '7em'
-        },
-        
-    
-    });
-
-const Home = () => {
-    const classes = useStyles();
+    }
 
     return (
-        <Container className={classes.container}>
+        <Container style={divStyle}>
             <div>
                 <img src={image} width="250vw" height="250vh" />                
                 <h1>Family Bike Chain</h1>

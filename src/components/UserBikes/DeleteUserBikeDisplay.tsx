@@ -3,14 +3,6 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
-    
-        container: {
-          
-            
-        }
-    
-    });
 
 interface Props {
     token: string | null

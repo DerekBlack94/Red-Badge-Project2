@@ -1,30 +1,24 @@
 import React from 'react';
-import {  makeStyles } from '@material-ui/core/styles'
+
 import { Container } from '@material-ui/core'
 import UpdateUserBike from './UpdateUserBike';
-
-const useStyles = makeStyles({
-    
-        container: {
-            marginTop: '5em',
-            backgroundColor: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            height: '100%'
-        }
-    
-    });
 
 interface Props {
     token: string | null
 }
 
 const UpdateUserBikeDisplay = (props: Props) => {
-    const classes = useStyles();
+    const divStyles = {
+        marginTop: '5em',
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        height: '100%'
+    }
 
     return (
-        <Container className={classes.container} >
+        <Container style={divStyles} >
             <div>
                 <h1>what would you like to update About Your Bike</h1>
                 {/* <UpdateUserBike token={props.token} /> */}

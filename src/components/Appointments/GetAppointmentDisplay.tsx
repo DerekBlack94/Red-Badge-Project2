@@ -4,19 +4,7 @@ import { Container } from '@material-ui/core'
 import GetAppointment from './GetAppointment'
 import image from '../assets/Logo.png'
 
-const useStyles = makeStyles({
-    
-        container: {
-            marginTop: '2em',
-            backgroundColor: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            height: '95vh',
-            paddingTop: '3em'
-        }
-    
-    });
+
 
 interface Props {
     token: string | null
@@ -24,12 +12,20 @@ interface Props {
 }
 
 const GetAppointmentDisplay =(props: Props)=>{
-    const classes = useStyles();
+    const divStyle = {
+        marginTop: '2em',
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        height: '95vh',
+        paddingTop: '3em'
+    }
 
     console.log('GetAppointment')
 
     return(
-        <Container className={classes.container}>
+        <Container style={divStyle}>
             <img src={image} width="250vw" height="250vh" />
             <div><h2>Your Scheduled Appointmnets</h2></div>
             <GetAppointment  token={props.token} />

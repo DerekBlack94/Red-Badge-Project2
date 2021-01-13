@@ -4,29 +4,7 @@ import { Container } from '@material-ui/core'
 import CreateAppointment from './CreateAppointment';
 import image from '../assets/Logo.png'
 
-const useStyles = makeStyles({
-    
-        container: {
-            marginTop: '3em',
-            backgroundColor: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            height: '95vh'
-        },img:{
-            display:'flex',
-            justifyContent: 'center',
-            alignContent: 'left',
-            
-            
-          }, styleDiv:{
-            //   backgroundColor: 'white',
-              alignContent: 'center',
-              display:'flex',
-              justifyContent: 'center',
-          }
-    
-    });
+
 
 interface Props {
     token: string | null
@@ -34,15 +12,37 @@ interface Props {
 }
 
 const CreateAppointmentDisplay = (props: Props) => {
-    const classes = useStyles();
+    const divStyle={
+         
+            marginTop: '3em',
+            backgroundColor: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            height: '95vh'
+        }
+        // img:{
+        //     display:'flex',
+        //     justifyContent: 'center',
+        //     alignContent: 'left',
+            
+            
+        //   }, styleDiv:{
+        //     //   backgroundColor: 'white',
+        //       alignContent: 'center',
+        //       display:'flex',
+        //       justifyContent: 'center',
+        //   }}
+    
+    
 
     return (
-        <div className={classes.styleDiv}>
+        <div style={divStyle}>
 
-        <Container className={classes.container} >
+        <Container style={divStyle} >
 
             <div>
-             <img className={classes.img} src={image} width="250vw" height="250vh" /> 
+             <img  src={image} width="250vw" height="250vh" /> 
                 <CreateAppointment token={props.token} />
             </div>
         </Container>

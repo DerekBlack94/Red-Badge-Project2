@@ -30,12 +30,19 @@ interface Props {
 }
 
 const SignUpDisplay = (props: Props) => {
-    const classes = useStyles();
+    const divStyle ={
+        marginTop: '3em',
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        height: '100vh'
+    }
 
     return (
-        <Container className={classes.mainContainer}>
+        <Container style={divStyle}>
             <div>
-                <h1 className={classes.signupText}>SIGN UP</h1>
+                <h1 style={divStyle}>SIGN UP</h1>
                 <Signup roleAdmin={props.roleAdmin} roleUser={props.roleUser} updateToken={props.updateToken} />
             </div>
         </Container>

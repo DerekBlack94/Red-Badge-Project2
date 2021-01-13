@@ -25,18 +25,6 @@ import {  makeStyles } from '@material-ui/core/styles'
 import APIURL from '../../helpers/environment'
 
 
-// const useStyles = makeStyles({
-//   img:{
-//     display:'flex',
-//     justifyContent: 'center',
-    
-//   },
-
-// })
-
-
-
-
 
 interface State {
  savedDate: string,

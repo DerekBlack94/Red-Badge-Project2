@@ -3,18 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
 import DeleteAppointment from './DeleteAppointment';
 
-const useStyles = makeStyles(() =>
-    createStyles({
-        container: {
-            marginTop: '5em',
-            backgroundColor: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            height: '100%'
-        }
-    }),
-);
+
 
 interface Props {
     token: string |null ,
@@ -22,12 +11,19 @@ interface Props {
 }
 
 const DeleteAppointmentDisplay =(props: Props)=>{
-    const classes = useStyles();
+    const divStyle ={
+        marginTop: '5em',
+        backgroundColor: 'white',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        height: '100%'
+    }
 
     console.log('DeleteAppointment')
 
     return(
-        <Container className={classes.container}>
+        <Container style={divStyle}>
             <div>You deleted stuff!</div>
             {/* <DeleteAppointment  token={props.token} /> */}
         </Container>
