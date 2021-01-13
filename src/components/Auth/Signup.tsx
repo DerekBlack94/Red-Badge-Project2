@@ -87,7 +87,7 @@ export default class Signup extends Component<Props, SignUpState>{
                     <TextField id="outlined-basic" label="Last Name" variant="outlined"
                     onChange={(e)=>this.setLastName(e.target.value)} />
                     <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e)=>this.setEmail(e.target.value)} />
-                    <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(e)=>this.setPassword(e.target.value)} />
+                    <TextField type='password' id="outlined-basic" label="Password" variant="outlined" onChange={(e)=>this.setPassword(e.target.value)} />
                     <Button onClick={(e)=>this.signUpUser(e)} type='submit' variant="contained">Register</Button>
                     <Button  onClick={(e) => this.props.roleAdmin(e)} >Admin</Button>
                     <Button onClick={(e) => this.props.roleUser(e)} >User</Button>

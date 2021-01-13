@@ -18,7 +18,7 @@ const SignUpDisplay = (props: Props) => {
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        height: '80vh'
+        height: '100vh'
     }
     const title = {
         marginTop: "2em",

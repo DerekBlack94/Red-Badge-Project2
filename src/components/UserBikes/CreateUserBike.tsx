@@ -74,7 +74,7 @@ class CreateUserBike extends Component<Props, State> {
                     <TextField id="outlined-basic" label="color" onChange={(e) => this.setState({color: e.target.value})} />
                     <TextField id="outlined-basic" label="Size" onChange={(e) => this.setState({size: e.target.value})} />
                     <TextField id="outlined-basic" label="Tire Size" onChange={(e) => this.setState({tireSize: e.target.value})} />
-                    <TextField id="outlined-basic" label="Anything else you'd like us to knew" onChange={(e) => this.setState({userInput: e.target.value})} />
+                    <TextField id="outlined-basic" label="Anything else you'd like us to know" onChange={(e) => this.setState({userInput: e.target.value})} />
                     <Button onClick={(e)=>this.handleSubmit(e)} type='submit' variant="contained">Submit</Button>
 
                 </div>

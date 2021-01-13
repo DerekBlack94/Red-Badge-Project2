@@ -81,11 +81,11 @@ class sideDrawer extends React.Component<Props,State> {
           
             <ListItem >
               <ListItemIcon><MailIcon /></ListItemIcon>
-        <Link to="/createbike"><Button>New Bike</Button></Link>
+        <Link to="/createbike"><Button> Make New Bike</Button></Link>
             </ListItem>
             <ListItem>
               <ListItemIcon><DirectionsBikeSharpIcon></DirectionsBikeSharpIcon></ListItemIcon>
-              <Link to='/getbike'><Button>Your Bikes</Button></Link>
+              <Link to='/getbike'><Button>User Bikes</Button></Link>
             </ListItem>
             {/* <ListItem>
               <ListItemIcon><DirectionsBikeSharpIcon></DirectionsBikeSharpIcon></ListItemIcon>
@@ -101,11 +101,11 @@ class sideDrawer extends React.Component<Props,State> {
         
             <ListItem >
               <ListItemIcon><AddSharpIcon></AddSharpIcon></ListItemIcon>
-              <Link to='/createapp'><Button>Schduel Appointment</Button></Link>
+              <Link to='/createapp'><Button>Make New Appointment</Button></Link>
             </ListItem>
             <ListItem >
               <ListItemIcon><AccessTimeIcon></AccessTimeIcon></ListItemIcon>
-              <Link to='/getapp'><Button>Your Appointments</Button></Link>
+              <Link to='/getapp'><Button> Scheduled Appointments</Button></Link>
             </ListItem>
             {/* <ListItem >
               <ListItemIcon><AddSharpIcon></AddSharpIcon></ListItemIcon>

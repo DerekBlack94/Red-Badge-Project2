@@ -19,7 +19,7 @@ const GetUserBikeDisplay = (props: Props) => {
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        height: '100%',
+        height: '100vh',
         paddingTop: '3em'
     }
     
@@ -27,7 +27,7 @@ const GetUserBikeDisplay = (props: Props) => {
         <Container style={divStyle} >
             <img  src={image} width="250vw" height="250vh" /> 
         <div>
-        <h2>Your Bikes</h2>
+        <h2>User Bikes</h2>
         <GetUserBike token={props.token}/>
         </div>
 

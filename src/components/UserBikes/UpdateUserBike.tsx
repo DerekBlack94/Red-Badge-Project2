@@ -144,52 +144,55 @@ updateUserBike() {
   }
 
   render() {
+    const divStyle = {
+      backgroundColor: "white"
+    }
     return (
       <div>
         
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Make"
             variant="outlined"
             value={this.state.make}
             onChange={(e) => this.setMake(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="model"
             variant="outlined"
             value={this.state.model}
             onChange={(e) => this.setModel(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Year"
             variant="outlined"
             value={this.state.year}
             onChange={(e) => this.setYear(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Color"
             variant="outlined"
             value={this.state.color}
             onChange={(e) => this.setColor(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Bike Size"
             variant="outlined"
             value={this.state.size}
             onChange={(e) => this.setSize(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="Tire Size"
             variant="outlined"
             value={this.state.tireSize}
             onChange={(e) => this.setTireSize(e.target.value)}
           />
-          <TextField
+          <TextField style={divStyle}
             id="outlined-basic"
             label="what's new"
             variant="outlined"

@@ -77,7 +77,7 @@ class GetUserBike extends Component<Props, State> {
   render() {
     const paperStyle = {
       backgroundColor: "green",
-      width: "17vw"
+      width: "20vw"
 
     }
     

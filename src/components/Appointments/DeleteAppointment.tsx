@@ -38,7 +38,7 @@ class DeleteAppointment extends Component<Props, State>{
 
 deleteAppointment() {
     // const AppId = this.state.appointment.id
-    fetch(`${APIURL}/${this.props.appointmentId}`, {
+    fetch(`${APIURL}/appointments/${this.props.appointmentId}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ deleteAppointment() {
 render(){
     return(
         <div>
-            <h1>can you see me?</h1>
+            {/* <h1>can you see me?</h1> */}
             {/* <div>how about this?</div> */}
             <Button variant='contained' onClick={this.deleteAppointment}>Delete</Button>
             

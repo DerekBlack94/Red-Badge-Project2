@@ -76,7 +76,7 @@ class GetAppointment extends Component<Props, State> {
   }
 
   render() {
-    
+
     const paperStyle = {
       backgroundColor: "green",
       width: "17vw"
@@ -93,8 +93,9 @@ class GetAppointment extends Component<Props, State> {
                 return(
                     <div key={index} >
                       <Paper style={paperStyle}>
-                        <h1>{appointment.savedDate}</h1>
-                        <h1>{appointment.userInput}</h1>
+                        <h1>Appintment Number:{appointment.id}</h1>
+                        <h1>Appointments Time{appointment.savedDate}</h1>
+                        <h1>Comments:{appointment.userInput}</h1>
                         {/* <h1>{appointment.id}</h1> */}
                         {/* {localStorage.getItem('')} */}
                         {/* {appointment.userId.toString() === localStorage.getItem('userId')? <DeleteAppointment appointmentId={appointment.id} token={this.props.token} /> : <div/> } */}
