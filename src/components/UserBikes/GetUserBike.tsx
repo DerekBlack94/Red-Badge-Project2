@@ -80,6 +80,13 @@ class GetUserBike extends Component<Props, State> {
       width: "20vw"
 
     }
+    const textStyle = {
+      color: "white",
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+    }
+  
     
     return (
       <div>
@@ -93,19 +100,19 @@ class GetUserBike extends Component<Props, State> {
                   
                     <div key={index} >
                       <Paper style={paperStyle}>
-                      <h2>Your {bike.make} {bike.model}</h2>
-                        <h3>Make:{bike.make}</h3>
-                        <h3>Model:{bike.model}</h3>
-                        <h3>Year:{bike.year}</h3>
-                        <h3>Color:{bike.color}</h3>
-                        <h3>Size:{bike.size}</h3>
-                        <h3>Tire Size:{bike.tireSize}</h3>
-                        <h3>Comments:{bike.userInput}</h3>
+                      <h2 style={textStyle}>Your {bike.make} {bike.model}</h2>
+                        <h3 style={textStyle}>Make:{bike.make}</h3>
+                        <h3 style={textStyle}>Model:{bike.model}</h3>
+                        <h3 style={textStyle}>Year:{bike.year}</h3>
+                        <h3 style={textStyle}>Color:{bike.color}</h3>
+                        <h3 style={textStyle}>Size:{bike.size}</h3>
+                        <h3 style={textStyle}>Tire Size:{bike.tireSize}</h3>
+                        <h3 style={textStyle}>Comments:{bike.userInput}</h3>
                         {/* <h3>role:{bike.user.role}</h3> */}
                         {/* {this.props.token === "" ? null : <DeleteUserBike userBikeId={bike.id} token={this.props.token}/> } */}
                         {/* <DeleteUserBike userBikeId={bike.id} token={this.props.token}/> */}
-                        {bike.userId.toString() === localStorage.getItem('userId') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
                         {bike.userId.toString() === localStorage.getItem('userId') ? <UpdateUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
+                        {bike.userId.toString() === localStorage.getItem('userId') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> }
                         {/* {bike.user.role.toString() === localStorage.getItem('admin') ? <DeleteUserBike userBikeId={bike.id} token={this.props.token} /> : <div/> } */}
                         {/* <UpdateUserBike userBikeId={bike.id} token={this.props.token}/> */}
                         </Paper>

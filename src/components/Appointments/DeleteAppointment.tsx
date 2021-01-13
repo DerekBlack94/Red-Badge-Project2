@@ -60,11 +60,20 @@ deleteAppointment() {
   }
 
 render(){
+  const buttonStyle ={
+    // display: 'flex',
+    // justifyContent: 'right',
+    // alignContent: 'right',
+    // bottom:"10vh",
+    marginLeft: "2em"
+  
+
+  }
     return(
         <div>
             {/* <h1>can you see me?</h1> */}
             {/* <div>how about this?</div> */}
-            <Button variant='contained' onClick={this.deleteAppointment}>Delete</Button>
+            <Button  variant='contained' onClick={this.deleteAppointment}>Delete</Button>
             
 
         </div>

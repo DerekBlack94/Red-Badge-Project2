@@ -145,10 +145,22 @@ updateUserBike() {
 
   render() {
     const divStyle = {
-      backgroundColor: "white"
+      backgroundColor: "white",
+      
+    }
+    const buttonStyle ={
+      display: 'flex',
+      justifyContent: 'right',
+      alignContent: 'right',
+      left: "9em",
+      marginTop: "2em"
+
+    }
+    const mainStyle ={
+      paddingTop: "6em"
     }
     return (
-      <div>
+      <div style={mainStyle}>
         
           <TextField style={divStyle}
             id="outlined-basic"
@@ -199,8 +211,8 @@ updateUserBike() {
             value={this.state.userInput}
             onChange={(e) => this.setUserInput(e.target.value)}
           />
-        
-          <Button variant='contained' onClick={this.updateUserBike}>Update</Button>
+        <div></div>
+          <Button style={buttonStyle} variant='contained' onClick={this.updateUserBike}>Update</Button>
       </div>
     );
   }

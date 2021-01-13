@@ -60,12 +60,23 @@ deleteUserBike() {
   }
 
 render(){
+  const buttonStyle ={
+    display: 'flex',
+    justifyContent: 'right',
+    alignContent: 'right',
+    bottom:"5vh",
+    marginLeft: "2em"
+    
+    
+  
+
+  }
     return(
-        <div>
+        <div >
             {/* <h1>can you see me?</h1>
             <div>how about this?</div> */}
             
-            <Button variant='contained' onClick={this.deleteUserBike}>Delete</Button>
+            <Button  style={buttonStyle} variant='contained' onClick={this.deleteUserBike}>Delete</Button>
             
             
 

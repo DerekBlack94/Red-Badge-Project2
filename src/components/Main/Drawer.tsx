@@ -19,6 +19,7 @@ import DirectionsBikeSharpIcon from '@material-ui/icons/DirectionsBikeSharp';
 import AddSharpIcon from '@material-ui/icons/AddSharp';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import MotorcycleIcon from '@material-ui/icons/Motorcycle';
 
 const styles = {
   list: {
@@ -80,7 +81,7 @@ class sideDrawer extends React.Component<Props,State> {
           </ListItem>
           
             <ListItem >
-              <ListItemIcon><MailIcon /></ListItemIcon>
+              <ListItemIcon><MotorcycleIcon></MotorcycleIcon></ListItemIcon>
         <Link to="/createbike"><Button> Make New Bike</Button></Link>
             </ListItem>
             <ListItem>

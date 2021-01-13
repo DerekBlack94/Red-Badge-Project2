@@ -19,15 +19,18 @@ const GetUserBikeDisplay = (props: Props) => {
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
-        height: '100vh',
+        height: '500vh',
         paddingTop: '3em'
+    }
+    const textStyle ={
+        color: "green"
     }
     
     return (
         <Container style={divStyle} >
             <img  src={image} width="250vw" height="250vh" /> 
         <div>
-        <h2>User Bikes</h2>
+        <h1 style={textStyle}>User Bikes</h1>
         <GetUserBike token={props.token}/>
         </div>
 

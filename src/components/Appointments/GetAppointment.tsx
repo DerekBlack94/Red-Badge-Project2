@@ -82,6 +82,12 @@ class GetAppointment extends Component<Props, State> {
       width: "17vw"
 
     }
+    const textStyle = {
+      color: "white",
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+    }
     return (
       <div>
           <li>
@@ -93,9 +99,9 @@ class GetAppointment extends Component<Props, State> {
                 return(
                     <div key={index} >
                       <Paper style={paperStyle}>
-                        <h1>Appintment Number:{appointment.id}</h1>
-                        <h1>Appointments Time{appointment.savedDate}</h1>
-                        <h1>Comments:{appointment.userInput}</h1>
+                        <h1 style={textStyle}>Appintment Number:{appointment.id}</h1>
+                        <h1 style={textStyle}>Appointments Time{appointment.savedDate}</h1>
+                        <h1 style={textStyle}>Comments:{appointment.userInput}</h1>
                         {/* <h1>{appointment.id}</h1> */}
                         {/* {localStorage.getItem('')} */}
                         {/* {appointment.userId.toString() === localStorage.getItem('userId')? <DeleteAppointment appointmentId={appointment.id} token={this.props.token} /> : <div/> } */}

@@ -79,6 +79,23 @@ updateAppointment() {
     const divStyle = {
       backgroundColor: "white"
     }
+    const textStyle = {
+      color: "white",
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+    }
+    const mainStyle ={
+      paddingTop: "6em"
+    }
+    const buttonStyle ={
+      display: 'flex',
+      justifyContent: 'right',
+      alignContent: 'right',
+      left: "9em",
+      marginTop: "2em"
+
+    }
     return (
       <div>
         
@@ -98,7 +115,7 @@ updateAppointment() {
           />
          
           {/* <Button onClick={(e)=>this.handleSubmit(e)} type='submit' variant="contained">Submit</Button> */}
-          <Button variant='contained' onClick={this.updateAppointment}>Update</Button>
+          <Button style={buttonStyle} variant='contained' onClick={this.updateAppointment}>Update</Button>
       </div>
     );
   }
