@@ -11,8 +11,8 @@ interface Props {
 
 const UpdateAppointmentDisplay = (props: Props) => {
     const divStyles = {
-        marginTop: '5em',
-        backgroundColor: 'gray',
+        marginTop: '3em',
+        backgroundColor: 'green',
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',

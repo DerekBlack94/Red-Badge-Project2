@@ -23,6 +23,7 @@ import {
 import image from '../assets/Logo.png'
 import {  makeStyles } from '@material-ui/core/styles'
 import APIURL from '../../helpers/environment'
+import Paper from '@material-ui/core/Paper';
 
 
 

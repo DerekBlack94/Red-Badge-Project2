@@ -23,6 +23,7 @@ const DisplayUserBike = (props: Props) => {
     return (
         <Container style={divStyle}  >
             <div>
+            <img  src={image} width="250vw" height="250vh" /> 
                 <h1>Tell Us About Your Bike</h1>
                 <CreateUserBike token={props.token} />
             </div>
